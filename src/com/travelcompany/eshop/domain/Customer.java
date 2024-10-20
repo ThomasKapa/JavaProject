@@ -9,7 +9,6 @@ public class Customer {
     private String customerName;
     private String email;
     private String address;
-    private String Nationality;
     private Nationality nationality;
     private Category category;
 
@@ -25,17 +24,51 @@ public class Customer {
     }
 
 
+    public Long getId() {
+        return id;
+    }
 
+    public void setId(Long id) {
+        this.id = id;
+    }
 
+    public String getCustomerName() {
+        return customerName;
+    }
 
+    public void setCustomerName(String customerName) {
+        this.customerName = customerName;
+    }
 
+    public String getEmail() {
+        return email;
+    }
 
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
+    public String getAddress() {
+        return address;
+    }
 
+    public void setAddress(String address) {
+        this.address = address;
+    }
 
+    public Nationality getNationality() {
+        return nationality;
+    }
 
+    public void setNationality(Nationality nationality) {
+        this.nationality = nationality;
+    }
 
+    public Category getCategory() {
+        return category;
+    }
 
-
-
+    public void setCategory(Category category) {
+        this.category = category;
+    }
 }
