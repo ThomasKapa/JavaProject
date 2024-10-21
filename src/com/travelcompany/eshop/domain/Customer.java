@@ -3,13 +3,15 @@ package com.travelcompany.eshop.domain;
 import com.travelcompany.eshop.enumeration.Category;
 import com.travelcompany.eshop.enumeration.Nationality;
 
-public class Customer {
+public abstract class Customer {
 
     private Long id ;
     private String customerName;
     private String email;
     private String address;
     private Nationality nationality;
+
+
 
 
     public Customer(Long id, String customerName, String email, String address, Nationality nationality) {
@@ -62,4 +64,5 @@ public class Customer {
     }
 
 
+    public abstract getCategory() ;
 }

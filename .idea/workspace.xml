@@ -2,15 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f2612ea4-f11a-486e-a8f0-e552dad10087" name="Changes" comment="classes ticket &amp; itinerary &amp; customer. setters and getters. added airlines and PaymentMethod enums. TicketService class built to calculate discounts based on customer category.">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/travelcompany/eshop/domain/BusinesCustomer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/travelcompany/eshop/domain/IndividualCustomer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/travelcompany/eshop/TravelCompanyEshop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/travelcompany/eshop/TravelCompanyEshop.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/travelcompany/eshop/domain/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/travelcompany/eshop/domain/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/travelcompany/eshop/domain/Itinerary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/travelcompany/eshop/domain/Itinerary.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/travelcompany/eshop/domain/Ticket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/travelcompany/eshop/domain/Ticket.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/travelcompany/eshop/enumeration/AirportCodes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/travelcompany/eshop/enumeration/AirportCodes.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/travelcompany/eshop/service/TicketService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/travelcompany/eshop/service/TicketService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -104,7 +96,14 @@
       <option name="project" value="LOCAL" />
       <updated>1729499977570</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="classes ticket &amp; itinerary &amp; customer. setters and getters. added airlines and PaymentMethod enums. TicketService class built to calculate discounts based on customer category.">
+      <created>1729511378338</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1729511378339</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
