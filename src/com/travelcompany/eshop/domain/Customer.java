@@ -64,5 +64,5 @@ public abstract class Customer {
     }
 
 
-    public abstract getCategory() ;
+    public abstract Category getCategory() ;
 }

@@ -38,9 +38,9 @@ public class TicketService {
 
         double finalPrice = itinerary.getPrice();
 
-        if (customer.get == Category.BUSINESS) {
+        if (customer.getCategory() == Category.BUSINESS) {
             finalPrice -= finalPrice * PERCENTAGE_10;  // 10% discount for business customers
-        } else if (customer.g() == Category.INDIVIDUAL) {
+        } else if (customer.getCategory() == Category.INDIVIDUAL) {
             finalPrice += finalPrice * PERCENTAGE_20;  // 20% surcharge for individual customers
         }
 
