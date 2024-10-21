@@ -14,15 +14,23 @@ private PaymentMethod paymentMethod;
 
 private double paymentAmount;
 
-private double ticketPrice = getItinerary().getPrice();
 
 
 public Ticket(Customer customer, Itinerary itinerary, PaymentMethod paymentMethod){
     this.customer =customer;
     this.itinerary = itinerary;
     this.paymentMethod=paymentMethod;
-    this.paymentAmount = TicketService.getPaymentAmount();
+    TicketService ticketService = new TicketService();
+    this.paymentAmount = ticketService.getPaymentAmount(customer,itinerary,paymentMethod);
 }
+
+    public double getPaymentAmount() {
+        return paymentAmount;
+    }
+
+    public void setPaymentAmount(double paymentAmount) {
+        this.paymentAmount = paymentAmount;
+    }
 
     public Customer getCustomer() {
         return customer;

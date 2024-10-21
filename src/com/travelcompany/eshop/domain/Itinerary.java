@@ -3,7 +3,7 @@ package com.travelcompany.eshop.domain;
 import com.travelcompany.eshop.enumeration.Airlines;
 import com.travelcompany.eshop.enumeration.AirportCodes;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 public class Itinerary {
 
@@ -11,7 +11,7 @@ public class Itinerary {
 
     private AirportCodes destinationAirport;
 
-    private Date departureDate;
+    private String departureDate;
 
     private Airlines airline;
 
@@ -19,7 +19,7 @@ public class Itinerary {
 
     private Customer customer;
 
-    public Itinerary(Customer customer,AirportCodes departureAirport, AirportCodes destinationAirport, Date departureDate, Airlines airline, double price) {
+    public Itinerary(Customer customer, AirportCodes departureAirport, AirportCodes destinationAirport, String departureDate, Airlines airline, double price) {
        this.customer = customer;
         this.departureAirport = departureAirport;
         this.destinationAirport = destinationAirport;
@@ -27,6 +27,7 @@ public class Itinerary {
         this.airline = airline;
         this.price = price;
     }
+
 
     public AirportCodes getDepartureAirport() {
         return departureAirport;
@@ -44,12 +45,12 @@ public class Itinerary {
         this.destinationAirport = destinationAirport;
     }
 
-    public Date getDepartureDate() {
+    public String getDepartureDate() {
         return departureDate;
     }
 
-    public void setDepartureDate(Date departureDate) {
-        this.departureDate = departureDate;
+    public void setDepartureDate(LocalDate departureDate) {
+        this.departureDate = String.valueOf(departureDate);
     }
 
     public Airlines getAirline() {
