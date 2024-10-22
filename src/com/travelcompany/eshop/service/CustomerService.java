@@ -1,6 +1,8 @@
 package com.travelcompany.eshop.service;
 
-public class CustomerService {
+import com.travelcompany.eshop.domain.Customer;
 
+public interface CustomerService {
 
+    Customer getCustomerById(int id);
 }

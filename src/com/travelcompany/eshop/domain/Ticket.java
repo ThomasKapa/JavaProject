@@ -2,27 +2,29 @@ package com.travelcompany.eshop.domain;
 
 import com.travelcompany.eshop.enumeration.PaymentMethod;
 
-import com.travelcompany.eshop.service.TicketService;
+import com.travelcompany.eshop.service.TicketServiceImpl;
 
 public class Ticket {
 
-private Customer customer;
+    private long id;
 
-private Itinerary itinerary;
+    private Customer customer;
 
-private PaymentMethod paymentMethod;
+    private Itinerary itinerary;
 
-private double paymentAmount;
+    private PaymentMethod paymentMethod;
+
+    private double paymentAmount;
 
 
-
-public Ticket(Customer customer, Itinerary itinerary, PaymentMethod paymentMethod){
-    this.customer =customer;
-    this.itinerary = itinerary;
-    this.paymentMethod=paymentMethod;
-    TicketService ticketService = new TicketService();
-    this.paymentAmount = ticketService.getPaymentAmount(customer,itinerary,paymentMethod);
-}
+    public Ticket(long id, Customer customer, Itinerary itinerary, PaymentMethod paymentMethod) {
+        this.id = id;
+        this.customer = customer;
+        this.itinerary = itinerary;
+        this.paymentMethod = paymentMethod;
+        TicketServiceImpl ticketService = new TicketServiceImpl();
+        this.paymentAmount = ticketService.getPaymentAmount(customer, itinerary, paymentMethod);
+    }
 
     public double getPaymentAmount() {
         return paymentAmount;
@@ -56,6 +58,12 @@ public Ticket(Customer customer, Itinerary itinerary, PaymentMethod paymentMetho
         this.paymentMethod = paymentMethod;
     }
 
+    public void setId(int id) {
+        this.id = id;
+    }
 
+    public int getId() {
+        return (int) id;
+    }
 }
 

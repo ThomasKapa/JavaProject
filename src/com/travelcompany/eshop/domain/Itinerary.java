@@ -7,6 +7,7 @@ import java.time.LocalDate;
 
 public class Itinerary {
 
+    private long id;
     private AirportCodes departureAirport;
 
     private AirportCodes destinationAirport;
@@ -19,8 +20,9 @@ public class Itinerary {
 
     private Customer customer;
 
-    public Itinerary(Customer customer, AirportCodes departureAirport, AirportCodes destinationAirport, String departureDate, Airlines airline, double price) {
-       this.customer = customer;
+    public Itinerary(long id, Customer customer, AirportCodes departureAirport, AirportCodes destinationAirport, String departureDate, Airlines airline, double price) {
+        this.id = id;
+        this.customer = customer;
         this.departureAirport = departureAirport;
         this.destinationAirport = destinationAirport;
         this.departureDate = departureDate;
@@ -28,6 +30,17 @@ public class Itinerary {
         this.price = price;
     }
 
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public void setDepartureDate(String departureDate) {
+        this.departureDate = departureDate;
+    }
 
     public AirportCodes getDepartureAirport() {
         return departureAirport;

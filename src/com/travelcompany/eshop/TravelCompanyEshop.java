@@ -1,7 +1,7 @@
 package com.travelcompany.eshop;
 
 import com.travelcompany.eshop.domain.BusinessCustomer;
-import com.travelcompany.eshop.service.TicketService;
+import com.travelcompany.eshop.service.TicketServiceImpl;
 import com.travelcompany.eshop.domain.Customer;
 import com.travelcompany.eshop.domain.Itinerary;
 import com.travelcompany.eshop.domain.Ticket;
@@ -14,13 +14,13 @@ public class TravelCompanyEshop {
 
         Customer mich = new BusinessCustomer(1L, "Vazakopoulos Michail", "mvazakopoulos@gmail.com", "Greece", Nationality.GREEK);
 
-        Itinerary brusselsAthens = new Itinerary(mich, AirportCodes.VEV, AirportCodes.GEF, "31-12-2024", Airlines.AEGEAN_AIRLINES, 500);
+        Itinerary tripone = new Itinerary(1L, mich, AirportCodes.VEV, AirportCodes.GEF, "31-12-2024", Airlines.AEGEAN_AIRLINES, 500);
 
-        Ticket ticketMich = new Ticket(mich, brusselsAthens, PaymentMethod.CASH);
+        Ticket ticketMich = new Ticket(1,mich, tripone, PaymentMethod.CASH);
 
-        TicketService paymentAmount = new TicketService();
+        TicketServiceImpl paymentAmount = new TicketServiceImpl();
 
-        System.out.println(paymentAmount.getPaymentAmount(mich,brusselsAthens,PaymentMethod.CASH));
+        System.out.println(paymentAmount.getPaymentAmount(mich,tripone,PaymentMethod.CASH));
 
     }
 
