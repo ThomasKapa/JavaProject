@@ -1,19 +1,18 @@
 package com.travelcompany.eshop;
 
-import com.travelcompany.eshop.domain.BusinesCustomer;
+import com.travelcompany.eshop.domain.BusinessCustomer;
 import com.travelcompany.eshop.service.TicketService;
 import com.travelcompany.eshop.domain.Customer;
 import com.travelcompany.eshop.domain.Itinerary;
 import com.travelcompany.eshop.domain.Ticket;
 import com.travelcompany.eshop.enumeration.*;
-import org.w3c.dom.ls.LSOutput;
 
 public class TravelCompanyEshop {
 
     public static void main(String[] args) {
 
 
-        Customer mich = new BusinesCustomer(1L, "Vazakopoulos Michail", "mvazakopoulos@gmail.com", "Greece", Nationality.GREEK);
+        Customer mich = new BusinessCustomer(1L, "Vazakopoulos Michail", "mvazakopoulos@gmail.com", "Greece", Nationality.GREEK);
 
         Itinerary brusselsAthens = new Itinerary(mich, AirportCodes.VEV, AirportCodes.GEF, "31-12-2024", Airlines.AEGEAN_AIRLINES, 500);
 

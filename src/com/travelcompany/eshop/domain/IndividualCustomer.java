@@ -19,4 +19,11 @@ public class IndividualCustomer extends Customer{
     public void setCategory(Category category) {
         this.category = category;
     }
+
+    @Override
+    public String toString() {
+        return super.toString() + "IndividualCustomer{" +
+                "category=" + category +
+                '}';
+    }
 }

@@ -65,4 +65,15 @@ public abstract class Customer {
 
 
     public abstract Category getCategory() ;
+
+    @Override
+    public String toString() {
+        return "Customer{" +
+                "id=" + id +
+                ", customerName='" + customerName + '\'' +
+                ", email='" + email + '\'' +
+                ", address='" + address + '\'' +
+                ", nationality=" + nationality +
+                '}';
+    }
 }
