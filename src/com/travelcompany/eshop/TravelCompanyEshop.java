@@ -1,27 +1,33 @@
 package com.travelcompany.eshop;
 
-import com.travelcompany.eshop.domain.BusinessCustomer;
-import com.travelcompany.eshop.service.TicketServiceImpl;
-import com.travelcompany.eshop.domain.Customer;
-import com.travelcompany.eshop.domain.Itinerary;
-import com.travelcompany.eshop.domain.Ticket;
+import com.travelcompany.eshop.domain.*;
+import com.travelcompany.eshop.service.*;
 import com.travelcompany.eshop.enumeration.*;
 
 public class TravelCompanyEshop {
 
     public static void main(String[] args) {
 
+        CustomerService customerService = new CustomerServiceImpl();
+        ItineraryService itineraryService = new ItineraryServiceImpl();
+        TicketService ticketService = new TicketServiceImpl();
 
-        Customer mich = new BusinessCustomer(1L, "Vazakopoulos Michail", "mvazakopoulos@gmail.com", "Greece", Nationality.GREEK);
+        //customers added
+        customerService.addCustomer(new BusinessCustomer(1L, "Karavasilis Thomas", "xtkaravas@ote.gr", "Kifisias 99", Nationality.GREEK));
+        customerService.addCustomer(new IndividualCustomer(2L, "Vazakopoulos Michalis", "mvazakopoulos@ote.gr", "Kifisias 99", Nationality.ICELANDIC));
 
-        Itinerary tripone = new Itinerary(1L, mich, AirportCodes.VEV, AirportCodes.GEF, "31-12-2024", Airlines.AEGEAN_AIRLINES, 500);
+        //itinerary added
 
-        Ticket ticketMich = new Ticket(1,mich, tripone, PaymentMethod.CASH);
+        itineraryService.addItinerary(new Itinerary(1L, new BusinessCustomer(2L, "karavasilis Thomas", "xtkaravas@ote.gr", "Kifisias 99", Nationality.GREEK)
+                , AirportCodes.AAD, AirportCodes.SAK, "31-12-2024", Airlines.AEGEAN_AIRLINES, 500));
 
-        TicketServiceImpl paymentAmount = new TicketServiceImpl();
+        //Tickets added
 
-        System.out.println(paymentAmount.getPaymentAmount(mich,tripone,PaymentMethod.CASH));
 
+        for (Customer customer : customerService.getAllCustomers())
+            System.out.println(customer);
+
+        System.out.println();
     }
 
 }

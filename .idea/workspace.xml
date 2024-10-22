@@ -1,9 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f2612ea4-f11a-486e-a8f0-e552dad10087" name="Changes" comment="added CustomerService and TicketService interfaces.Added CustomerServiceImpl and TicketServiceImpl.">
-      <change afterPath="$PROJECT_DIR$/src/com/travelcompany/eshop/service/ItineraryService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/travelcompany/eshop/service/ItineraryServiceImpl.java" afterDir="false" />
+    <list default="true" id="f2612ea4-f11a-486e-a8f0-e552dad10087" name="Changes" comment="added ItineraryService and ItineraryServiceImplServiceImpl.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/travelcompany/eshop/TravelCompanyEshop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/travelcompany/eshop/TravelCompanyEshop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/travelcompany/eshop/domain/BusinessCustomer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/travelcompany/eshop/domain/BusinessCustomer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/travelcompany/eshop/domain/IndividualCustomer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/travelcompany/eshop/domain/IndividualCustomer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/travelcompany/eshop/service/CustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/travelcompany/eshop/service/CustomerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/travelcompany/eshop/service/CustomerServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/travelcompany/eshop/service/CustomerServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/travelcompany/eshop/service/ItineraryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/travelcompany/eshop/service/ItineraryService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/travelcompany/eshop/service/ItineraryServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/travelcompany/eshop/service/ItineraryServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/travelcompany/eshop/service/TicketService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/travelcompany/eshop/service/TicketService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/travelcompany/eshop/service/TicketServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/travelcompany/eshop/service/TicketServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -132,7 +140,14 @@
       <option name="project" value="LOCAL" />
       <updated>1729602295119</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="added ItineraryService and ItineraryServiceImplServiceImpl.">
+      <created>1729602821341</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1729602821341</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -152,6 +167,7 @@
     <MESSAGE value="classes ticket &amp; itinerary &amp; customer. setters and getters. added airlines and PaymentMethod enums. TicketService class built to calculate discounts based on customer category." />
     <MESSAGE value="added to sttring , returning super ++" />
     <MESSAGE value="added CustomerService and TicketService interfaces.Added CustomerServiceImpl and TicketServiceImpl." />
-    <option name="LAST_COMMIT_MESSAGE" value="added CustomerService and TicketService interfaces.Added CustomerServiceImpl and TicketServiceImpl." />
+    <MESSAGE value="added ItineraryService and ItineraryServiceImplServiceImpl." />
+    <option name="LAST_COMMIT_MESSAGE" value="added ItineraryService and ItineraryServiceImplServiceImpl." />
   </component>
 </project>

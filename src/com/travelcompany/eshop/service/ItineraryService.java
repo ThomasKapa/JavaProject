@@ -6,9 +6,9 @@ import java.util.List;
 
 public interface ItineraryService {
 
-    List<Itinerary> getAllItineraries();
+    List<Itinerary> getAllItineraries(); // βλέπω όλες τις διαδρομές
 
-    void addItinerary(Itinerary itinerary);
+    void addItinerary(Itinerary itinerary);  //προσθέτω διαδρομή
 
-    Itinerary getItineraryById(int id);
+    Itinerary getItineraryById(int id); //βλέπω ένα ψάχνοντας με id
 }

@@ -3,12 +3,13 @@ package com.travelcompany.eshop.domain;
 import com.travelcompany.eshop.enumeration.Category;
 import com.travelcompany.eshop.enumeration.Nationality;
 
-public class IndividualCustomer extends Customer{
+public class IndividualCustomer extends Customer {
 
     Category category = Category.INDIVIDUAL;
 
-    public IndividualCustomer (Long id, String customerName, String email, String address, Nationality nationality, Category category){
-        super(id,customerName,email,address,nationality);
+    public IndividualCustomer(Long id, String customerName, String email, String address, Nationality nationality) {
+        super(id, customerName, email, address, nationality);
+
 
     }
 
@@ -22,8 +23,8 @@ public class IndividualCustomer extends Customer{
 
     @Override
     public String toString() {
-        return super.toString() + "IndividualCustomer{" +
-                "category=" + category +
-                '}';
+        return super.toString() + "  " + "Individual Customer";
     }
+
+
 }

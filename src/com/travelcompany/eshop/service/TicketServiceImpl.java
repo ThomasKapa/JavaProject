@@ -55,17 +55,24 @@ public class TicketServiceImpl implements TicketService {
     }
 
     @Override
+    public List<Ticket> getAllTickets() {
+        return ticketList;
+    }
+
+    @Override
+    public void addTicket(Ticket ticket) {
+        ticketList.add(ticket);
+    }
+
+    @Override
     public Ticket getTicketById(int id) {
-        for (Ticket ticket : ticketList){
-            if (ticket.getId() == id){
+        for (Ticket ticket : ticketList) {
+            if (ticket.getId() == id) {
                 return ticket;
             }
         }
         return null;
     }
-
-
-
 
 
 }
