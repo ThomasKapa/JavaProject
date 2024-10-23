@@ -20,7 +20,7 @@ public class ItineraryServiceImpl implements ItineraryService {
     }
 
     @Override
-    public Itinerary getItineraryById(int id) {
+    public Itinerary getItineraryById(long id) {
 
         for (Itinerary itinerary : ItiniraryList) {
             if (itinerary.getId() == id) {

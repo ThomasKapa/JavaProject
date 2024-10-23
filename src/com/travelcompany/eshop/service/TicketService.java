@@ -16,5 +16,5 @@ public interface TicketService {
 
     void addTicket (Ticket ticket);
 
-    Ticket getTicketById(int id);
+    Ticket getTicketById(long id);
 }

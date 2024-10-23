@@ -18,11 +18,11 @@ public class Itinerary {
 
     private double price;
 
-    private Customer customer;
 
-    public Itinerary(long id, Customer customer, AirportCodes departureAirport, AirportCodes destinationAirport, String departureDate, Airlines airline, double price) {
+
+    public Itinerary(long id, AirportCodes departureAirport, AirportCodes destinationAirport, String departureDate, Airlines airline, double price) {
         this.id = id;
-        this.customer = customer;
+
         this.departureAirport = departureAirport;
         this.destinationAirport = destinationAirport;
         this.departureDate = departureDate;
@@ -82,11 +82,15 @@ public class Itinerary {
         this.price = price;
     }
 
-    public Customer getCustomer() {
-        return customer;
-    }
-
-    public void setCustomer(Customer customer) {
-        this.customer = customer;
+    @Override
+    public String toString() {
+        return "Itinerary{" +
+                "id=" + id +
+                ", departureAirport=" + departureAirport +
+                ", destinationAirport=" + destinationAirport +
+                ", departureDate='" + departureDate + '\'' +
+                ", airline=" + airline +
+                ", price=" + price +
+                '}';
     }
 }

@@ -10,5 +10,5 @@ public interface CustomerService {
 
     void addCustomer(Customer customer);
 
-    Customer getCustomerById(int id);
+    Customer getCustomerById(long id);
 }

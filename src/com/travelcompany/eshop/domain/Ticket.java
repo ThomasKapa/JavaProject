@@ -58,12 +58,23 @@ public class Ticket {
         this.paymentMethod = paymentMethod;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
-    public int getId() {
-        return (int) id;
+    public long getId() {
+        return id;
+    }
+
+    @Override
+    public String toString() {
+        return "Ticket{" +
+                "id=" + id +
+                ", customer=" + customer +
+                ", itinerary=" + itinerary +
+                ", paymentMethod=" + paymentMethod +
+                ", paymentAmount=" + paymentAmount +
+                '}';
     }
 }
 

@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f2612ea4-f11a-486e-a8f0-e552dad10087" name="Changes" comment="added ItineraryService and ItineraryServiceImplServiceImpl.">
+    <list default="true" id="f2612ea4-f11a-486e-a8f0-e552dad10087" name="Changes" comment="created customers and itinerary. Calling services in the TravelCompanyEshop (main)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/travelcompany/eshop/TravelCompanyEshop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/travelcompany/eshop/TravelCompanyEshop.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/travelcompany/eshop/domain/BusinessCustomer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/travelcompany/eshop/domain/BusinessCustomer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/travelcompany/eshop/domain/IndividualCustomer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/travelcompany/eshop/domain/IndividualCustomer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/travelcompany/eshop/domain/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/travelcompany/eshop/domain/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/travelcompany/eshop/domain/Itinerary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/travelcompany/eshop/domain/Itinerary.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/travelcompany/eshop/domain/Ticket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/travelcompany/eshop/domain/Ticket.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/travelcompany/eshop/service/CustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/travelcompany/eshop/service/CustomerService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/travelcompany/eshop/service/CustomerServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/travelcompany/eshop/service/CustomerServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/travelcompany/eshop/service/ItineraryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/travelcompany/eshop/service/ItineraryService.java" afterDir="false" />
@@ -147,7 +148,14 @@
       <option name="project" value="LOCAL" />
       <updated>1729602821341</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="created customers and itinerary. Calling services in the TravelCompanyEshop (main)">
+      <created>1729606158937</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1729606158937</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -168,6 +176,7 @@
     <MESSAGE value="added to sttring , returning super ++" />
     <MESSAGE value="added CustomerService and TicketService interfaces.Added CustomerServiceImpl and TicketServiceImpl." />
     <MESSAGE value="added ItineraryService and ItineraryServiceImplServiceImpl." />
-    <option name="LAST_COMMIT_MESSAGE" value="added ItineraryService and ItineraryServiceImplServiceImpl." />
+    <MESSAGE value="created customers and itinerary. Calling services in the TravelCompanyEshop (main)" />
+    <option name="LAST_COMMIT_MESSAGE" value="created customers and itinerary. Calling services in the TravelCompanyEshop (main)" />
   </component>
 </project>

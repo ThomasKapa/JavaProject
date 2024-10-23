@@ -65,7 +65,7 @@ public class TicketServiceImpl implements TicketService {
     }
 
     @Override
-    public Ticket getTicketById(int id) {
+    public Ticket getTicketById(long id) {
         for (Ticket ticket : ticketList) {
             if (ticket.getId() == id) {
                 return ticket;

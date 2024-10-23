@@ -10,5 +10,5 @@ public interface ItineraryService {
 
     void addItinerary(Itinerary itinerary);  //προσθέτω διαδρομή
 
-    Itinerary getItineraryById(int id); //βλέπω ένα ψάχνοντας με id
+    Itinerary getItineraryById(long id); //βλέπω ένα ψάχνοντας με id
 }
