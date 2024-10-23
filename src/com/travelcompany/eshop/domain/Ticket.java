@@ -10,6 +10,8 @@ public class Ticket {
 
     private Customer customer;
 
+
+
     private Itinerary itinerary;
 
     private PaymentMethod paymentMethod;

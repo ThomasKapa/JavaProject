@@ -75,4 +75,14 @@ public class TicketServiceImpl implements TicketService {
     }
 
 
+    public List<Ticket> getTicketByCustomer(long id) {
+        List<Ticket> customerIdTickets = new ArrayList<Ticket>();
+        for (Ticket ticket : ticketList) {
+            if (ticket.getCustomer().getId() == id) {
+                customerIdTickets.add(ticket);
+            }
+        }
+       return customerIdTickets;
+    }
 }
+

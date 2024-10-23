@@ -17,4 +17,6 @@ public interface TicketService {
     void addTicket (Ticket ticket);
 
     Ticket getTicketById(long id);
+
+    List<Ticket> getTicketByCustomer(long id);
 }
