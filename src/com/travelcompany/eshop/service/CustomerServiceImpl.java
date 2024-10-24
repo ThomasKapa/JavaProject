@@ -30,6 +30,7 @@ public class CustomerServiceImpl implements CustomerService {
         return null;
     }
 
+
     //πρέπει να κάνω δική μου λίστα που να ξεκινά το id απο ένα μέχρι και αυτή τη λίστα να βάλω στο = new Arraylist<customer>();
     //να βάλω ενα κανόνα που θα δεν θα επιτρέπει τον ίδιο customer 2 φορές.
     // Set<Customer> customer = new Hashset<Customer>(); μια λίστα που επιτρέπει μια φορά να καταχωρηθεί το καθένα

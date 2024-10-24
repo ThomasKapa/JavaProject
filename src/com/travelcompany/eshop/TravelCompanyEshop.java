@@ -6,13 +6,14 @@ import com.travelcompany.eshop.enumeration.*;
 
 import java.util.List;
 
+
 public class TravelCompanyEshop {
 
     public static void main(String[] args) {
 
         CustomerService customerService = new CustomerServiceImpl();
         ItineraryService itineraryService = new ItineraryServiceImpl();
-        TicketService ticketService = new TicketServiceImpl();
+        TicketServiceImpl ticketService = new TicketServiceImpl();
 
         //customers added
         customerService.addCustomer(new BusinessCustomer(1L, "Karavasilis Thomas", "xtkaravas@ote.gr", "Kifisias 99", Nationality.GREEK));
@@ -101,9 +102,45 @@ public class TravelCompanyEshop {
 
         //List of the customers with the most tickets
 
+        Customer customerWithMostTickets = null;
+        int maxTickets = 0;
+
+        for (Customer customer : customerService.getAllCustomers()) {
+            int ticketCount = ticketService.getAllTickets().size();
+            if (ticketCount > maxTickets) {
+                maxTickets = ticketCount;
+                customerWithMostTickets = customer;
+            }
+        }
+
+        if (customerWithMostTickets != null) {
+            System.out.println("Customer with the most tickets booked: " + customerWithMostTickets.getCustomerName());
+            System.out.println("Number of tickets booked: " + maxTickets);
+        } else {
+            System.out.println("No customers found.");
+        }
+
+
 
         //List of the customers with the largest cost of purchases
 
+//        Customer customerWithLargestPurchase = null;
+//        double maxAmount = 0;
+//
+//        for (Customer customer : customerService.getAllCustomers()) {
+//            double purchaseAmount = ticketService.getPaymentAmount(customer, ticketService.getItinerary(),ticketService.getPaymentMethod(customer,ticketService.getTicket(customer)));
+//            if (purchaseAmount > maxAmount) {
+//                maxAmount = purchaseAmount;
+//                customerWithLargestPurchase  = customer;
+//            }
+//        }
+//
+//        if (customerWithLargestPurchase != null) {
+//            System.out.println("Customer with the most tickets booked: " + customerWithLargestPurchase .getCustomerName());
+//            System.out.println("Number of tickets booked: " + maxAmount);
+//        } else {
+//            System.out.println("No customers found.");
+//        }
 
         //List of the customers with the most tickets and with the largest cost of purchases
 

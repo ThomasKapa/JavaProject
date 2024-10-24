@@ -19,4 +19,10 @@ public interface TicketService {
     Ticket getTicketById(long id);
 
     List<Ticket> getTicketByCustomer(long id);
+
+
+    PaymentMethod getPaymentMethod(Customer customer, Ticket ticket);
+
+
+
 }

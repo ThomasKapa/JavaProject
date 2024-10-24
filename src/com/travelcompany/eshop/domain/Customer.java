@@ -5,13 +5,11 @@ import com.travelcompany.eshop.enumeration.Nationality;
 
 public abstract class Customer {
 
-    private Long id ;
+    private Long id;
     private String customerName;
     private String email;
     private String address;
     private Nationality nationality;
-
-
 
 
     public Customer(Long id, String customerName, String email, String address, Nationality nationality) {
@@ -64,7 +62,7 @@ public abstract class Customer {
     }
 
 
-    public abstract Category getCategory() ;
+    public abstract Category getCategory();
 
     @Override
     public String toString() {
@@ -76,4 +74,5 @@ public abstract class Customer {
                 ", nationality=" + nationality +
                 '}';
     }
+
 }

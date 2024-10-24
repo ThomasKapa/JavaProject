@@ -82,11 +82,22 @@ public class TicketServiceImpl implements TicketService {
                 customerIdTickets.add(ticket);
             }
         }
-       return customerIdTickets;
+        return customerIdTickets;
     }
 
+    @Override
+    public PaymentMethod getPaymentMethod(Customer customer , Ticket ticket) {
+        if (getCustomer().getCategory()== Category.BUSINESS) {
+            return PaymentMethod.CREDIT_CARD;
 
+        } else {
+            return PaymentMethod.CASH;
+        }
+    }
 
+    public int getTicketCount() {
+        return ticketList.size();
+    }
 
 
 }

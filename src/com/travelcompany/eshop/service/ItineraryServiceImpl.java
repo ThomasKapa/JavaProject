@@ -1,5 +1,6 @@
 package com.travelcompany.eshop.service;
 
+import com.travelcompany.eshop.domain.Customer;
 import com.travelcompany.eshop.domain.Itinerary;
 import com.travelcompany.eshop.domain.Ticket;
 import com.travelcompany.eshop.enumeration.AirportCodes;
@@ -55,4 +56,5 @@ public class ItineraryServiceImpl implements ItineraryService {
         }
         return departureList;
     }
+
 }
