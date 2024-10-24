@@ -84,11 +84,28 @@ public class TravelCompanyEshop {
         System.out.println();
 
 
-//prints tickets based on customer id
+        //prints tickets based on customer id
 
         List<Ticket> ticketByCustomer = ticketService.getTicketByCustomer(1L);
         System.out.println("Customer with this id has booked the tickets bellow:" + "\n" + ticketByCustomer);
 
+
+        //List of the total offered itineraries per destination airport
+
+        System.out.println(itineraryService.getItineraryByDestination(AirportCodes.DAU));
+
+        //List of the total offered itineraries per departure airport
+
+        System.out.println(itineraryService.getItineraryByDeparture(AirportCodes.VAI));
+
+
+        //List of the customers with the most tickets
+
+
+        //List of the customers with the largest cost of purchases
+
+
+        //List of the customers with the most tickets and with the largest cost of purchases
 
     }
 
