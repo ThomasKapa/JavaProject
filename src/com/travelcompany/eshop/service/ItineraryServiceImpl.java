@@ -50,7 +50,7 @@ public class ItineraryServiceImpl implements ItineraryService {
     public List<Itinerary> getItineraryByDeparture(AirportCodes airportCodes) {
         List<Itinerary> departureList = new ArrayList<Itinerary>();
         for (Itinerary itinerary : ItiniraryList) {
-            if (itinerary.getDestinationAirport() == airportCodes) {
+            if (itinerary.getDepartureAirport() == airportCodes) {
                 departureList.add(itinerary);
             }
         }

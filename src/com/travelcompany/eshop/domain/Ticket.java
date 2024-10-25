@@ -72,8 +72,8 @@ public class Ticket {
     public String toString() {
         return "Ticket{" +
                 "id=" + id +
-                ", customer=" + customer +
-                ", itinerary=" + itinerary +
+                ", customer id= " + customer.getId() +
+                ", itinerary id=" + itinerary.getId() +
                 ", paymentMethod=" + paymentMethod +
                 ", paymentAmount=" + paymentAmount +
                 '}';

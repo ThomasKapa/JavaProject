@@ -60,7 +60,7 @@ public class TicketServiceImpl implements TicketService {
     }
 
     @Override
-    public void addTicket(Ticket ticket) {
+    public void purchaseTicket(Ticket ticket) {
         ticketList.add(ticket);
     }
 

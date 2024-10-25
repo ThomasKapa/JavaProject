@@ -4,7 +4,9 @@ import com.travelcompany.eshop.domain.*;
 import com.travelcompany.eshop.service.*;
 import com.travelcompany.eshop.enumeration.*;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 
 public class TravelCompanyEshop {
@@ -23,6 +25,7 @@ public class TravelCompanyEshop {
         customerService.addCustomer(new IndividualCustomer(5L, "Paschalis Dimitris", "dpaschalis@ote.gr", "Kifisias 36", Nationality.BULGARIAN));
         customerService.addCustomer(new BusinessCustomer(6L, "Plati Giota", "gplati@ote.gr", "Kifisias 56", Nationality.HUNGARIAN));
         customerService.addCustomer(new IndividualCustomer(7L, "Farantos Spiros", "sfarantos@ote.gr", "Kifisias 03", Nationality.TOGOLESE));
+        List<Customer> customerList = customerService.getAllCustomers();
 
         //itinerary added
 
@@ -38,20 +41,21 @@ public class TravelCompanyEshop {
         itineraryService.addItinerary(new Itinerary(10L, AirportCodes.XBE, AirportCodes.CBC, "04-06-2024)", Airlines.LOT_POLISH_AIRLINES, 666));
         itineraryService.addItinerary(new Itinerary(11L, AirportCodes.SAE, AirportCodes.XBE, "12-12-2024", Airlines.EASYJET, 784));
         itineraryService.addItinerary(new Itinerary(12L, AirportCodes.ZBF, AirportCodes.SBC, "04-06-2024)", Airlines.ITA_AIRWAYS, 322));
-        itineraryService.addItinerary(new Itinerary(1L, AirportCodes.VAI, AirportCodes.BAJ, "12-12-2024", Airlines.AEGEAN_AIRLINES, 500));
-        itineraryService.addItinerary(new Itinerary(13L, AirportCodes.ABP, AirportCodes.JAV, "04-06-2024)", Airlines.LUFTHANSA_GROUP, 3000));
+        itineraryService.addItinerary(new Itinerary(13L, AirportCodes.VAI, AirportCodes.BAJ, "12-12-2024", Airlines.AEGEAN_AIRLINES, 500));
+        itineraryService.addItinerary(new Itinerary(14L, AirportCodes.ABP, AirportCodes.JAV, "04-06-2024)", Airlines.LUFTHANSA_GROUP, 3000));
+        List<Itinerary> itineraryList = itineraryService.getAllItineraries();
 
+        //Tickets purchased
 
-        //Tickets added
+        ticketService.purchaseTicket(new Ticket(1L, customerService.getCustomerById(1L), itineraryService.getItineraryById(1L), PaymentMethod.CASH));
+        ticketService.purchaseTicket(new Ticket(2L, customerService.getCustomerById(3L), itineraryService.getItineraryById(3L), PaymentMethod.CREDIT_CARD));
+        ticketService.purchaseTicket(new Ticket(3L, customerService.getCustomerById(1L), itineraryService.getItineraryById(5L), PaymentMethod.CREDIT_CARD));
+        List<Ticket> ticketList = ticketService.getAllTickets();
 
-        ticketService.addTicket(new Ticket(1L, customerService.getCustomerById(1L), itineraryService.getItineraryById(1L), PaymentMethod.CASH));
-        ticketService.addTicket(new Ticket(2L, customerService.getCustomerById(1L), itineraryService.getItineraryById(3L), PaymentMethod.CREDIT_CARD));
-        ticketService.addTicket(new Ticket(3L, customerService.getCustomerById(1L), itineraryService.getItineraryById(5L), PaymentMethod.CREDIT_CARD));
-
-
+        System.out.println();
         //prints all customers
         System.out.println("All available customers are shown below" + "\n");
-        for (Customer customer : customerService.getAllCustomers())
+        for (Customer customer : customerList)
             System.out.println(customer);
 
         System.out.println();
@@ -59,14 +63,14 @@ public class TravelCompanyEshop {
 
 //        prints all itineraries
         System.out.println("All available itineraries are shown below" + "\n");
-        for (Itinerary itinerary : itineraryService.getAllItineraries())
+        for (Itinerary itinerary : itineraryList)
             System.out.println(itinerary);
 
         System.out.println();
 
         //prints all tickets
         System.out.println("Currently the booked tickets are :" + "\n");
-        for (Ticket ticket : ticketService.getAllTickets())
+        for (Ticket ticket : ticketList)
             System.out.println(ticket);
 
 
@@ -79,7 +83,8 @@ public class TravelCompanyEshop {
         System.out.println();
 
         //prints ticket by id
-        System.out.println("Ticket with id x is shown bellow:" + "\n");
+
+        System.out.println("Ticket with id " + ticketService.getTicketById(1L).getId() + " is shown bellow:" + "\n");
         System.out.println(ticketService.getTicketById(1L));
 
         System.out.println();
@@ -88,27 +93,34 @@ public class TravelCompanyEshop {
         //prints tickets based on customer id
 
         List<Ticket> ticketByCustomer = ticketService.getTicketByCustomer(1L);
-        System.out.println("Customer with this id has booked the tickets bellow:" + "\n" + ticketByCustomer);
+        System.out.println("Customer with id " + customerService.getCustomerById(1L).getId() + " has booked the tickets bellow:" + "\n" + customerService.getCustomerById(1L));
 
 
         //List of the total offered itineraries per destination airport
-
-        System.out.println(itineraryService.getItineraryByDestination(AirportCodes.DAU));
+        System.out.println();
+        System.out.println("List of the total offered itineraries per destination airport " + AirportCodes.DAU + " are:" + itineraryService.getItineraryByDestination(AirportCodes.DAU));
 
         //List of the total offered itineraries per departure airport
-
-        System.out.println(itineraryService.getItineraryByDeparture(AirportCodes.VAI));
+        System.out.println();
+        System.out.println("List of the total offered itineraries per departure airport " + AirportCodes.VAI + " are:" + itineraryService.getItineraryByDeparture(AirportCodes.ABP));
 
 
         //List of the customers with the most tickets
 
+        System.out.println();
+
         Customer customerWithMostTickets = null;
         int maxTickets = 0;
 
-        for (Customer customer : customerService.getAllCustomers()) {
-            int ticketCount = ticketService.getAllTickets().size();
-            if (ticketCount > maxTickets) {
-                maxTickets = ticketCount;
+        for (Customer customer : customerList) {
+            int tempTickets = 0;
+            for (Ticket ticket : ticketList) {
+                if (customer.getId() == ticket.getCustomer().getId()) {
+                    tempTickets++;
+                }
+            }
+            if (tempTickets > maxTickets) {
+                maxTickets = tempTickets;
                 customerWithMostTickets = customer;
             }
         }
@@ -120,30 +132,35 @@ public class TravelCompanyEshop {
             System.out.println("No customers found.");
         }
 
+        System.out.println();
+
+        //Customer with the largest cost of purchase
+
+        Customer customerWithLargestPurchase = null;
+        double maxAmount = 0;
+
+        for (Customer customer : customerList) {
+            double purchaseAmount = 0;
+            for (Ticket ticket : ticketList) {
+                if (customer.getId() == ticket.getCustomer().getId()) {
+                    purchaseAmount += ticket.getPaymentAmount();
+                }
+            }
+            if (purchaseAmount > maxAmount) {
+                maxAmount = purchaseAmount;
+                customerWithLargestPurchase = customer;
+            }
+        }
 
 
-        //List of the customers with the largest cost of purchases
-
-//        Customer customerWithLargestPurchase = null;
-//        double maxAmount = 0;
-//
-//        for (Customer customer : customerService.getAllCustomers()) {
-//            double purchaseAmount = ticketService.getPaymentAmount(customer, ticketService.getItinerary(),ticketService.getPaymentMethod(customer,ticketService.getTicket(customer)));
-//            if (purchaseAmount > maxAmount) {
-//                maxAmount = purchaseAmount;
-//                customerWithLargestPurchase  = customer;
-//            }
-//        }
-//
-//        if (customerWithLargestPurchase != null) {
-//            System.out.println("Customer with the most tickets booked: " + customerWithLargestPurchase .getCustomerName());
-//            System.out.println("Number of tickets booked: " + maxAmount);
-//        } else {
-//            System.out.println("No customers found.");
-//        }
+        if (customerWithLargestPurchase != null) {
+            System.out.println("Customer with the largest cost of purchase is: " + customerWithLargestPurchase.getCustomerName());
+            System.out.println("Total cost of purchases is: " + maxAmount);
+        } else {
+            System.out.println("No customers found.");
+        }
 
         //List of the customers with the most tickets and with the largest cost of purchases
 
     }
-
 }
