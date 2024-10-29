@@ -84,13 +84,12 @@ public class Itinerary {
 
     @Override
     public String toString() {
-        return "Itinerary{" +
-                "id=" + id +
-                ", departureAirport=" + departureAirport +
-                ", destinationAirport=" + destinationAirport +
-                ", departureDate='" + departureDate + '\'' +
-                ", airline=" + airline +
-                ", price=" + price +
-                '}';
+        return "Itinerary id: " + id +
+                ", departure Airport: " + departureAirport +
+                ", destination Airport: " + destinationAirport +
+                ", departure Date: " + departureDate +
+                ", airline: " + airline +
+                ", price: " + price +
+                "€";
     }
 }

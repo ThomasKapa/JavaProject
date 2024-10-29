@@ -21,6 +21,6 @@ public class BusinessCustomer extends Customer {
 
     @Override
     public String toString() {
-        return super.toString() + "  " + "Busines Customer" ;
+        return super.toString() + " " + "Business Customer" ;
     }
 }

@@ -57,4 +57,26 @@ public class ItineraryServiceImpl implements ItineraryService {
         return departureList;
     }
 
+    @Override
+    public void printItineraryPerDestination(ItineraryService itineraryService, AirportCodes airportCodes) {
+        List<Itinerary> itineraryPerDestination = itineraryService.getItineraryByDestination(airportCodes);
+        System.out.println("List of the total offered itineraries per destination airport " + airportCodes + " are:" + itineraryService.getItineraryByDestination(airportCodes));
+
+        for (Itinerary itinerary : itineraryPerDestination) {
+            System.out.println(itinerary);
+        }
+        System.out.println();
+    }
+
+    //List of the total offered itineraries per departure airport
+    public void printItineraryPerDeparture(ItineraryService itineraryService, AirportCodes airportCodes) {
+        List<Itinerary> itineraryPerDeparture = itineraryService.getItineraryByDestination(airportCodes);
+        System.out.println("List of the total offered itineraries per departure airport " + airportCodes + " are:" + itineraryService.getItineraryByDeparture(airportCodes));
+
+        for (Itinerary itinerary : itineraryPerDeparture) {
+            System.out.println(itinerary);
+        }
+        System.out.println();
+    }
+
 }

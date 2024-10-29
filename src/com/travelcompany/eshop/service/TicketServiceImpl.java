@@ -86,8 +86,8 @@ public class TicketServiceImpl implements TicketService {
     }
 
     @Override
-    public PaymentMethod getPaymentMethod(Customer customer , Ticket ticket) {
-        if (getCustomer().getCategory()== Category.BUSINESS) {
+    public PaymentMethod getPaymentMethod(Customer customer, Ticket ticket) {
+        if (getCustomer().getCategory() == Category.BUSINESS) {
             return PaymentMethod.CREDIT_CARD;
 
         } else {
@@ -99,6 +99,22 @@ public class TicketServiceImpl implements TicketService {
         return ticketList.size();
     }
 
+    public void printTicketsByCustomer(Long customerId, TicketService ticketService, CustomerService customerService) {
+        List<Ticket> ticketByCustomer = ticketService.getTicketByCustomer(customerId);
+        System.out.println("Customer with ID " + customerId + " has booked the tickets below:\n");
+
+        for (Ticket ticket : ticketByCustomer) {
+            System.out.println(ticket);
+        }
+        System.out.println();
+    }
+
+    @Override
+    public void printTicketsById(Long ticketId, TicketService ticketService, CustomerService customerService) {
+        System.out.println("Ticket with id " + ticketService.getTicketById(ticketId).getId() + " is shown bellow:");
+        System.out.println(ticketService.getTicketById(ticketId));
+
+    }
 
 }
 

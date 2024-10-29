@@ -66,13 +66,13 @@ public abstract class Customer {
 
     @Override
     public String toString() {
-        return "Customer{" +
-                "id=" + id +
-                ", customerName='" + customerName + '\'' +
-                ", email='" + email + '\'' +
-                ", address='" + address + '\'' +
-                ", nationality=" + nationality +
-                '}';
+        return "Customer id: " +
+                id +
+                ", Name: " + customerName +
+                ", email: " + email +
+                ", address: " + address +
+                ", nationality: " + nationality +
+                ", Category:";
     }
 
 }

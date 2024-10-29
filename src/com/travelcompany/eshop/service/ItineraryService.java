@@ -17,4 +17,8 @@ public interface ItineraryService {
 
     List<Itinerary> getItineraryByDeparture (AirportCodes airportCodes); // βλέπω όλες τις διαδρομές με βάση το departure airport code
 
+    public void printItineraryPerDestination(ItineraryService itineraryService, AirportCodes airportCodes) ; ////List of the total offered itineraries per destination airport
+
+    public void printItineraryPerDeparture(ItineraryService itineraryService, AirportCodes airportCodes); //List of the total offered itineraries per departure airport
+
 }

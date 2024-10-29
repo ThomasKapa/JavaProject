@@ -70,13 +70,12 @@ public class Ticket {
 
     @Override
     public String toString() {
-        return "Ticket{" +
-                "id=" + id +
-                ", customer id= " + customer.getId() +
-                ", itinerary id=" + itinerary.getId() +
-                ", paymentMethod=" + paymentMethod +
-                ", paymentAmount=" + paymentAmount +
-                '}';
+        return "Ticket id: " + id +
+                ", Customer id: " + customer.getId() +
+                ", Itinerary id: " + itinerary.getId() +
+                ", Payment Method: " + paymentMethod +
+                ", Payment Amount: " + paymentAmount +
+                " €";
     }
 }
 
