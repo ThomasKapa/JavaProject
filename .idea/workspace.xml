@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f2612ea4-f11a-486e-a8f0-e552dad10087" name="Changes" comment="customer with most tickets booked">
+    <list default="true" id="f2612ea4-f11a-486e-a8f0-e552dad10087" name="Changes" comment="/Customer with the largest cost of purchase done">
+      <change afterPath="$PROJECT_DIR$/src/com/travelcompany/eshop/service/HandlerMain.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/travelcompany/eshop/TravelCompanyEshop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/travelcompany/eshop/TravelCompanyEshop.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/travelcompany/eshop/domain/Ticket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/travelcompany/eshop/domain/Ticket.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/travelcompany/eshop/service/ItineraryServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/travelcompany/eshop/service/ItineraryServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/travelcompany/eshop/service/TicketService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/travelcompany/eshop/service/TicketService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/travelcompany/eshop/service/TicketServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/travelcompany/eshop/service/TicketServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -178,7 +175,14 @@
       <option name="project" value="LOCAL" />
       <updated>1729813330649</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="/Customer with the largest cost of purchase done">
+      <created>1729866564190</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1729866564190</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -204,6 +208,7 @@
     <MESSAGE value="reporting tickets by customer id" />
     <MESSAGE value="reporting list of total offered itineraries per destination and departure airports" />
     <MESSAGE value="customer with most tickets booked" />
-    <option name="LAST_COMMIT_MESSAGE" value="customer with most tickets booked" />
+    <MESSAGE value="/Customer with the largest cost of purchase done" />
+    <option name="LAST_COMMIT_MESSAGE" value="/Customer with the largest cost of purchase done" />
   </component>
 </project>
