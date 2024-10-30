@@ -59,25 +59,6 @@ public class TicketServiceImpl implements TicketService {
         return ticketList;
     }
 
-
-
-    @Override
-    public void purchaseTicket(Ticket ticket) {
-//
-//        if (ticket.getItinerary() == null || !itineraryList.contains(ticket.getItinerary())) {
-//            throw new RuntimeException("Ticket " + ticket.getId() + " could not be issued because the itinerary does not exist.");
-//        }
-//            if (ticket.getCustomer() == null || !customerList.contains(ticket.getCustomer())) {
-//                throw new RuntimeException("Ticket " + ticket.getId() + " could not be issued because the customer does not exist.");
-//            }
-
-            // If both checks pass, add the ticket to the ticket list
-            ticketList.add(ticket);
-//            System.out.println("Ticket " + ticket.getId() + " purchased successfully for " + ticket.getCustomer().getCustomerName());
-
-        }
-
-
     @Override
     public Ticket getTicketById(long id) {
         for (Ticket ticket : ticketList) {
@@ -125,12 +106,50 @@ public class TicketServiceImpl implements TicketService {
 
     @Override
     public void printTicketsById(Long ticketId, TicketService ticketService, CustomerService customerService) {
-        System.out.println("Ticket with id " + ticketService.getTicketById(ticketId).getId() + " is shown bellow:");
-        System.out.println(ticketService.getTicketById(ticketId));
+        try {
+            Ticket ticket = getTicketById(ticketId);
+
+            System.out.println("Ticket with id " + ticketService.getTicketById(ticketId).getId() + " is shown bellow:");
+            System.out.println(ticketService.getTicketById(ticketId));
+
+        } catch (NullPointerException e) {
+            System.out.println("No ticket found with id " + ticketId);
+        }
 
     }
 
+    private CustomerService customerService;
 
+    public void TicketService(CustomerService customerService) {
+        this.customerService = customerService;
+    }
+
+    @Override
+    public void purchaseTicket(Ticket ticket, List<Itinerary> itineraryList, List<Customer> customerList) {
+
+        // Check if itinerary exists and is not null
+        if (ticket.getItinerary() == null || !itineraryList.contains(ticket.getItinerary())) {
+            System.out.println("Ticket " + ticket.getId() + " could not be issued because the itinerary does not exist.");
+            return;
+        //throw new RuntimeException("Ticket " + ticket.getId() + " could not be issued because the itinerary does not exist.");
+        }
+        // Check if customer exists and is not null
+        if (ticket.getCustomer() == null || !customerList.contains(ticket.getCustomer())) {
+            System.out.println("Ticket " + ticket.getId() + " could not be issued because the customer does not exist.");
+            return;
+        //throw new RuntimeException("Ticket " + ticket.getId() + " could not be issued because the customer does not exist.");
+
+        }
+
+        try {
+            System.out.println("Itinerary Price: " + ticket.getItinerary().getPrice());
+
+            ticketList.add(ticket);
+            System.out.println("Ticket " + ticket.getId() + " purchased successfully by " + ticket.getCustomer().getCustomerName());
+        } catch (NullPointerException e) {
+            System.out.println("Error: Itinerary details are missing for ticket ID " + ticket.getId() + ". Ticket was not purchased.");
+        }
+    }
 
 }
 

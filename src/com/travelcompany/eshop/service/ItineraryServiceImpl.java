@@ -5,8 +5,7 @@ import com.travelcompany.eshop.domain.Itinerary;
 import com.travelcompany.eshop.domain.Ticket;
 import com.travelcompany.eshop.enumeration.AirportCodes;
 
-import javax.print.attribute.standard.Destination;
-import javax.swing.plaf.basic.BasicTreeUI;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,6 +20,14 @@ public class ItineraryServiceImpl implements ItineraryService {
 
     @Override
     public void addItinerary(Itinerary itinerary) {
+
+        if ( itinerary.getDestinationAirport()== null){
+            throw new RuntimeException("Please check the Destination airport code: " + itinerary.getDestinationAirport());
+        }
+        if (  itinerary.getDepartureAirport()== null){
+            throw new RuntimeException("Please check the Departure airport code: " + itinerary.getDepartureAirport());
+        }
+
         ItiniraryList.add(itinerary);
     }
 

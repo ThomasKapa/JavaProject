@@ -14,7 +14,7 @@ public interface TicketService {
 
     List<Ticket> getAllTickets();
 
-    void purchaseTicket(Ticket ticket);
+    void purchaseTicket(Ticket ticket, List<Itinerary> itineraryList, List<Customer> customerList);
 
     Ticket getTicketById(long id);
 
@@ -26,6 +26,7 @@ public interface TicketService {
     public void printTicketsByCustomer(Long customerId, TicketService ticketService, CustomerService customerService);
 
     public void printTicketsById(Long ticketId, TicketService ticketService, CustomerService customerService);
+
 
 
 }

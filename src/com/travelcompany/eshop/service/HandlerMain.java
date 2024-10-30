@@ -14,23 +14,27 @@ public class HandlerMain {
 
     //Creates all itineraries
     public void initializeItineraries(ItineraryService itineraryService) {
-
-        itineraryService.addItinerary(new Itinerary(1L, AirportCodes.VAI, AirportCodes.BAJ, "12-12-2024", Airlines.AEGEAN_AIRLINES, 700));
-        itineraryService.addItinerary(new Itinerary(2L, AirportCodes.FAG, AirportCodes.YAA, "04-06-2024", Airlines.AEROFLOT, 650));
+        try {
+        itineraryService.addItinerary(new Itinerary(1L, AirportCodes.VAI, AirportCodes.BAJ, "12-22-2024", Airlines.AEGEAN_AIRLINES, 700));
+        itineraryService.addItinerary(new Itinerary(2L, AirportCodes.FAG, AirportCodes.YAA, "04-02-2024", Airlines.AEROFLOT, 650));
         itineraryService.addItinerary(new Itinerary(3L, AirportCodes.FAS, AirportCodes.YAM, "12-12-2024", Airlines.SUNEXPRESS, 350));
         itineraryService.addItinerary(new Itinerary(4L, AirportCodes.AAT, AirportCodes.AEB, "04-06-2024", Airlines.AIR_FRANCE_KLM, 1000));
         itineraryService.addItinerary(new Itinerary(5L, AirportCodes.EMS, AirportCodes.DAU, "12-12-2024", Airlines.PEGASUS_AIRLINES, 230));
-        itineraryService.addItinerary(new Itinerary(6L, AirportCodes.DGA, AirportCodes.CCD, "04-06-2024", Airlines.VOLOTEA, 380));
-        itineraryService.addItinerary(new Itinerary(7L, AirportCodes.DOI, AirportCodes.QFI, "12-12-2024", Airlines.SWISS_INTERNATIONAL_AIR_LINES, 150));
-        itineraryService.addItinerary(new Itinerary(8L, AirportCodes.WDN, AirportCodes.DDR, "04-06-2024", Airlines.AIR_EUROPA, 900));
-        itineraryService.addItinerary(new Itinerary(9L, AirportCodes.ACM, AirportCodes.DAU, "12-12-2024", Airlines.AEROFLOT, 420));
+        itineraryService.addItinerary(new Itinerary(6L, AirportCodes.DGA, AirportCodes.CCD, "04-11-2024", Airlines.VOLOTEA, 380));
+        itineraryService.addItinerary(new Itinerary(7L, AirportCodes.DOI, AirportCodes.QFI, "12-09-2024", Airlines.SWISS_INTERNATIONAL_AIR_LINES, 150));
+        itineraryService.addItinerary(new Itinerary(8L, AirportCodes.WDN, AirportCodes.DDR, "04-062024", Airlines.AIR_EUROPA, 900));
+        itineraryService.addItinerary(new Itinerary(9L, AirportCodes.ACM, AirportCodes.DAU, "12-11-2024", Airlines.AEROFLOT, 420));
         itineraryService.addItinerary(new Itinerary(10L, AirportCodes.XBE, AirportCodes.CBC, "04-06-2024", Airlines.LOT_POLISH_AIRLINES, 666));
-        itineraryService.addItinerary(new Itinerary(11L, AirportCodes.SAE, AirportCodes.XBE, "12-12-2024", Airlines.EASYJET, 785));
-        itineraryService.addItinerary(new Itinerary(12L, AirportCodes.ZBF, AirportCodes.SBC, "04-06-2024", Airlines.ITA_AIRWAYS, 322));
-        itineraryService.addItinerary(new Itinerary(13L, AirportCodes.VAI, AirportCodes.BAJ, "12-12-2024", Airlines.AEGEAN_AIRLINES, 500));
-        itineraryService.addItinerary(new Itinerary(14L, AirportCodes.ABP, AirportCodes.JAV, "04-06-2024", Airlines.LUFTHANSA_GROUP, 3010));
+        itineraryService.addItinerary(new Itinerary(11L, AirportCodes.SAE, AirportCodes.XBE, "17-12-2024", Airlines.EASYJET, 785));
+        itineraryService.addItinerary(new Itinerary(12L, AirportCodes.ZBF, AirportCodes.SBC, "29-06-2024", Airlines.ITA_AIRWAYS, 322));
+        itineraryService.addItinerary(new Itinerary(13L, AirportCodes.VAI, AirportCodes.BAJ, "30-12-2024", Airlines.AEGEAN_AIRLINES, 500));
+        itineraryService.addItinerary(new Itinerary(14L, AirportCodes.ABP, AirportCodes.JAV, "21-12-2024", Airlines.LUFTHANSA_GROUP, 3010));
+
+        } catch (RuntimeException e ){
+        System.out.println("Itinerary could not be created: " + e.getMessage());
     }
 
+}
 
     //Creates all customers with exception
 
@@ -43,7 +47,9 @@ public class HandlerMain {
                 customerService.addCustomer(new IndividualCustomer(5L, "Paschalis Dimitris", "dpaschalis@ote.gr", "Kifisias 36", Nationality.BULGARIAN));
                 customerService.addCustomer(new BusinessCustomer(6L, "Plati Giota", "gplati@ote.gr", "Kifisias 56", Nationality.HUNGARIAN));
                 customerService.addCustomer(new IndividualCustomer(7L, "Farantos Spiros", "sfarantos@ote.gr", "Kifisias 03", Nationality.TOGOLESE));
-                customerService.addCustomer(new IndividualCustomer(8L, "Vetis Ilias", "vetis@travelcompany.com", "Kassandrou 153", Nationality.TOGOLESE));
+                customerService.addCustomer(new IndividualCustomer(8L, "Giovani Gio", "gio@olimpiakos.com", "Kassandrou 153", Nationality.BRAZILIAN));
+                customerService.addCustomer(new IndividualCustomer(9L, "Vetis Ilias", "vetis@travelcompany.com", "Kassandrou 153", Nationality.TOGOLESE));
+
 
             } catch (RuntimeException e ){
                 System.out.println("Could not register customer: " + e.getMessage());
@@ -55,24 +61,29 @@ public class HandlerMain {
     //creates all tickets with exception
     public void initializeTickets(TicketService ticketService, CustomerService customerService, ItineraryService itineraryService) {
         try {
-        ticketService.purchaseTicket(new Ticket(1L, customerService.getCustomerById(1L), itineraryService.getItineraryById(1L), PaymentMethod.CASH));
-        ticketService.purchaseTicket(new Ticket(2L, customerService.getCustomerById(3L), itineraryService.getItineraryById(2L), PaymentMethod.CREDIT_CARD));
-        ticketService.purchaseTicket(new Ticket(3L, customerService.getCustomerById(1L), itineraryService.getItineraryById(3L), PaymentMethod.CASH));
-        ticketService.purchaseTicket(new Ticket(4L, customerService.getCustomerById(2L), itineraryService.getItineraryById(4L), PaymentMethod.CREDIT_CARD));
-        ticketService.purchaseTicket(new Ticket(5L, customerService.getCustomerById(5L), itineraryService.getItineraryById(5L), PaymentMethod.CASH));
-        ticketService.purchaseTicket(new Ticket(6L, customerService.getCustomerById(6L), itineraryService.getItineraryById(6L), PaymentMethod.CREDIT_CARD));
-        ticketService.purchaseTicket(new Ticket(7L, customerService.getCustomerById(7L), itineraryService.getItineraryById(7L), PaymentMethod.CASH));
-        ticketService.purchaseTicket(new Ticket(8L, customerService.getCustomerById(1L), itineraryService.getItineraryById(8L), PaymentMethod.CREDIT_CARD));
-        ticketService.purchaseTicket(new Ticket(9L, customerService.getCustomerById(3L), itineraryService.getItineraryById(9L), PaymentMethod.CREDIT_CARD));
-        ticketService.purchaseTicket(new Ticket(10L, customerService.getCustomerById(5L), itineraryService.getItineraryById(10L), PaymentMethod.CASH));
-        ticketService.purchaseTicket(new Ticket(11L, customerService.getCustomerById(3L), itineraryService.getItineraryById(5L), PaymentMethod.CREDIT_CARD));
-        ticketService.purchaseTicket(new Ticket(12L, customerService.getCustomerById(3L), itineraryService.getItineraryById(11L), PaymentMethod.CREDIT_CARD));
-        ticketService.purchaseTicket(new Ticket(13L, customerService.getCustomerById(1L), itineraryService.getItineraryById(12L), PaymentMethod.CASH));
-        ticketService.purchaseTicket(new Ticket(14L, customerService.getCustomerById(2L), itineraryService.getItineraryById(13L), PaymentMethod.CREDIT_CARD));
-        ticketService.purchaseTicket(new Ticket(15L, customerService.getCustomerById(7L), itineraryService.getItineraryById(14L), PaymentMethod.CREDIT_CARD));
+//            ticketService.purchaseTicket(new Ticket(1L,customerService.getCustomerById(1L),itineraryService.getItineraryById(20L),PaymentMethod.CASH),itineraryService.getAllItineraries(),customerService.getAllCustomers());
+            ticketService.purchaseTicket(new Ticket(2L,customerService.getCustomerById(2L),itineraryService.getItineraryById(7L),PaymentMethod.CREDIT_CARD),itineraryService.getAllItineraries(),customerService.getAllCustomers());
+            ticketService.purchaseTicket(new Ticket(3L,customerService.getCustomerById(3L),itineraryService.getItineraryById(6L),PaymentMethod.CREDIT_CARD),itineraryService.getAllItineraries(),customerService.getAllCustomers());
+            ticketService.purchaseTicket(new Ticket(4L,customerService.getCustomerById(4L),itineraryService.getItineraryById(5L),PaymentMethod.CASH),itineraryService.getAllItineraries(),customerService.getAllCustomers());
+            ticketService.purchaseTicket(new Ticket(5L,customerService.getCustomerById(5L),itineraryService.getItineraryById(4L),PaymentMethod.CASH),itineraryService.getAllItineraries(),customerService.getAllCustomers());
+            ticketService.purchaseTicket(new Ticket(6L,customerService.getCustomerById(6L),itineraryService.getItineraryById(3L),PaymentMethod.CREDIT_CARD),itineraryService.getAllItineraries(),customerService.getAllCustomers());
+            ticketService.purchaseTicket(new Ticket(7L,customerService.getCustomerById(7L),itineraryService.getItineraryById(2L),PaymentMethod.CASH),itineraryService.getAllItineraries(),customerService.getAllCustomers());
+            ticketService.purchaseTicket(new Ticket(8L,customerService.getCustomerById(7L),itineraryService.getItineraryById(1L),PaymentMethod.CASH),itineraryService.getAllItineraries(),customerService.getAllCustomers());
+            ticketService.purchaseTicket(new Ticket(9L,customerService.getCustomerById(6L),itineraryService.getItineraryById(1L),PaymentMethod.CREDIT_CARD),itineraryService.getAllItineraries(),customerService.getAllCustomers());
+            ticketService.purchaseTicket(new Ticket(10L,customerService.getCustomerById(5L),itineraryService.getItineraryById(2L),PaymentMethod.CASH),itineraryService.getAllItineraries(),customerService.getAllCustomers());
+            ticketService.purchaseTicket(new Ticket(11L,customerService.getCustomerById(4L),itineraryService.getItineraryById(3L),PaymentMethod.CREDIT_CARD),itineraryService.getAllItineraries(),customerService.getAllCustomers());
+            ticketService.purchaseTicket(new Ticket(12L,customerService.getCustomerById(3L),itineraryService.getItineraryById(4L),PaymentMethod.CASH),itineraryService.getAllItineraries(),customerService.getAllCustomers());
+            ticketService.purchaseTicket(new Ticket(13L,customerService.getCustomerById(2L),itineraryService.getItineraryById(8L),PaymentMethod.CASH),itineraryService.getAllItineraries(),customerService.getAllCustomers());
+            ticketService.purchaseTicket(new Ticket(14L,customerService.getCustomerById(1L),itineraryService.getItineraryById(9L),PaymentMethod.CASH),itineraryService.getAllItineraries(),customerService.getAllCustomers());
+            ticketService.purchaseTicket(new Ticket(15L,customerService.getCustomerById(1L),itineraryService.getItineraryById(10L),PaymentMethod.CREDIT_CARD),itineraryService.getAllItineraries(),customerService.getAllCustomers());
+            ticketService.purchaseTicket(new Ticket(16L,customerService.getCustomerById(2L),itineraryService.getItineraryById(11),PaymentMethod.CASH),itineraryService.getAllItineraries(),customerService.getAllCustomers());
+            ticketService.purchaseTicket(new Ticket(17L,customerService.getCustomerById(3L),itineraryService.getItineraryById(12),PaymentMethod.CREDIT_CARD),itineraryService.getAllItineraries(),customerService.getAllCustomers());
+            ticketService.purchaseTicket(new Ticket(18L,customerService.getCustomerById(4L),itineraryService.getItineraryById(13L),PaymentMethod.CASH),itineraryService.getAllItineraries(),customerService.getAllCustomers());
+            ticketService.purchaseTicket(new Ticket(19L,customerService.getCustomerById(5L),itineraryService.getItineraryById(14L),PaymentMethod.CASH),itineraryService.getAllItineraries(),customerService.getAllCustomers());
+            ticketService.purchaseTicket(new Ticket(20L,customerService.getCustomerById(6L),itineraryService.getItineraryById(14L),PaymentMethod.CREDIT_CARD),itineraryService.getAllItineraries(),customerService.getAllCustomers());
 
-        } catch (RuntimeException e ){
-            System.out.println( e.getMessage());
+        } catch (NullPointerException e ){
+            System.out.println( "Ticket was not purchased. " + e.getMessage());
         }
     }
 
@@ -159,7 +170,7 @@ public class HandlerMain {
 
         if (customerWithLargestPurchase != null) {
             System.out.println("Customer with the largest cost of purchase is: " + customerWithLargestPurchase.getCustomerName());
-            System.out.println("Total cost of purchases is: " + maxAmount);
+            System.out.println("Total cost of purchases is: " + maxAmount + " €");
         } else {
             System.out.println("No customers found.");
         }
@@ -170,22 +181,32 @@ public class HandlerMain {
     public void numberOfTicketsAndCost(List<Customer> customerList, List<Ticket> ticketList) {
 
         List<Customer> outputTotals = new ArrayList<>(); //customers that have booked tickets
+        List<Customer> customersWithNoTickets = new ArrayList<>();
 
         for (Customer customer : customerList) {
             double totalAmountPayed = 0;
             int totalTicketsBooked = 0;
+
             for (Ticket ticket : ticketList) {
                 if (customer.getId() == ticket.getCustomer().getId()) {
                     totalAmountPayed += ticket.getPaymentAmount();
                     totalTicketsBooked++;
                 }
             }
+            if (totalTicketsBooked > 0) {
+                outputTotals.add(customer); // Add customers who have booked tickets
+                System.out.println(customer.getCustomerName() + " has booked " + totalTicketsBooked + " tickets and has paid " + totalAmountPayed + " € in total.");
+            } else {
+                customersWithNoTickets.add(customer); // Add customers with 0 tickets
+            }
 
-            //  outputTotals.add(customer.getCustomerName(),totalTicketsBooked,totalAmountPayed);
-
-            System.out.println(customer.getCustomerName() + " has booked " + totalTicketsBooked + " tickets and has paid " + totalAmountPayed + " € in total.");
         }
-
+        System.out.println();
+        //customers with 0 tickets
+        System.out.println("Customers with no tickets booked:");
+        for (Customer customer : customersWithNoTickets) {
+            System.out.println(customer.getCustomerName());
+        }
     }
 
 

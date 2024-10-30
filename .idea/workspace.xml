@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f2612ea4-f11a-486e-a8f0-e552dad10087" name="Changes" comment="HandlerMain almost finished. added some print methods to ItineraryService,Ticketservice classes.Changed the way things are printing and shown in terminal. :-)">
+    <list default="true" id="f2612ea4-f11a-486e-a8f0-e552dad10087" name="Changes" comment="Aiport Codes enum list shortened.&#10;CustomerServiceImpl addcustomer exception handling added">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TravelCompanyEshop.iml" beforeDir="false" afterPath="$PROJECT_DIR$/TravelCompanyEshop.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/travelcompany/eshop/TravelCompanyEshop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/travelcompany/eshop/TravelCompanyEshop.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/travelcompany/eshop/enumeration/AirportCodes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/travelcompany/eshop/enumeration/AirportCodes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/travelcompany/eshop/service/CustomerServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/travelcompany/eshop/service/CustomerServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/travelcompany/eshop/service/HandlerMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/travelcompany/eshop/service/HandlerMain.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/travelcompany/eshop/service/ItineraryServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/travelcompany/eshop/service/ItineraryServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/travelcompany/eshop/service/TicketService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/travelcompany/eshop/service/TicketService.java" afterDir="false" />
@@ -45,6 +42,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
 }</component>
@@ -203,7 +201,14 @@
       <option name="project" value="LOCAL" />
       <updated>1730245823693</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Aiport Codes enum list shortened.&#10;CustomerServiceImpl addcustomer exception handling added">
+      <created>1730301682918</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1730301682918</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -232,7 +237,8 @@
     <MESSAGE value="/Customer with the largest cost of purchase done" />
     <MESSAGE value="starting building HandlerMain to clean up the main class" />
     <MESSAGE value="HandlerMain almost finished. added some print methods to ItineraryService,Ticketservice classes.Changed the way things are printing and shown in terminal. :-)" />
-    <option name="LAST_COMMIT_MESSAGE" value="HandlerMain almost finished. added some print methods to ItineraryService,Ticketservice classes.Changed the way things are printing and shown in terminal. :-)" />
+    <MESSAGE value="Aiport Codes enum list shortened.&#10;CustomerServiceImpl addcustomer exception handling added" />
+    <option name="LAST_COMMIT_MESSAGE" value="Aiport Codes enum list shortened.&#10;CustomerServiceImpl addcustomer exception handling added" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

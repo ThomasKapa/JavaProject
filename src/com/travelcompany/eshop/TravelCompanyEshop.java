@@ -30,7 +30,7 @@ public class TravelCompanyEshop {
         handlerMain.initializeTickets(ticketService, customerService, itineraryService);
         //Creating list of all itineraries &exception handling
         List<Ticket> ticketList = ticketService.getAllTickets();
-//---------------------------------------------------------------------------------------------------------------
+
         System.out.println();
         //Prints all lists of customers , itineraries and tickets
         handlerMain.printAll(customerList, itineraryList, ticketList);
