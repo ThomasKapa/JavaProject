@@ -6,12 +6,15 @@ import com.travelcompany.eshop.enumeration.AirportCodes;
 import com.travelcompany.eshop.enumeration.Nationality;
 import com.travelcompany.eshop.enumeration.PaymentMethod;
 
+import java.util.ArrayList;
+
 import java.util.List;
 
 public class HandlerMain {
 
     //Creates all itineraries
     public void initializeItineraries(ItineraryService itineraryService) {
+
         itineraryService.addItinerary(new Itinerary(1L, AirportCodes.VAI, AirportCodes.BAJ, "12-12-2024", Airlines.AEGEAN_AIRLINES, 700));
         itineraryService.addItinerary(new Itinerary(2L, AirportCodes.FAG, AirportCodes.YAA, "04-06-2024", Airlines.AEROFLOT, 650));
         itineraryService.addItinerary(new Itinerary(3L, AirportCodes.FAS, AirportCodes.YAM, "12-12-2024", Airlines.SUNEXPRESS, 350));
@@ -28,19 +31,30 @@ public class HandlerMain {
         itineraryService.addItinerary(new Itinerary(14L, AirportCodes.ABP, AirportCodes.JAV, "04-06-2024", Airlines.LUFTHANSA_GROUP, 3010));
     }
 
-    //Creates all customers
-    public void initializeCustomers(CustomerService customerService) {
-        customerService.addCustomer(new BusinessCustomer(1L, "Karavasilis Thomas", "xtkaravas@ote.gr", "Kifisias 99", Nationality.GREEK));
-        customerService.addCustomer(new IndividualCustomer(2L, "Vazakopoulos Michalis", "mvazakopoulos@ote.gr", "Kifisias 91", Nationality.ICELANDIC));
-        customerService.addCustomer(new IndividualCustomer(3L, "Vasiladioti Dora", "dvasiladiot@ote.gr", "Kifisias 87", Nationality.MADAGASCAN));
-        customerService.addCustomer(new BusinessCustomer(4L, "Zachos Dimitris", "dzachos@ote.gr", "Kifisias 01", Nationality.UZBEK));
-        customerService.addCustomer(new IndividualCustomer(5L, "Paschalis Dimitris", "dpaschalis@ote.gr", "Kifisias 36", Nationality.BULGARIAN));
-        customerService.addCustomer(new BusinessCustomer(6L, "Plati Giota", "gplati@ote.gr", "Kifisias 56", Nationality.HUNGARIAN));
-        customerService.addCustomer(new IndividualCustomer(7L, "Farantos Spiros", "sfarantos@ote.gr", "Kifisias 03", Nationality.TOGOLESE));
-    }
 
-    //creates all tickets
+    //Creates all customers with exception
+
+        public void initializeCustomers (CustomerService customerService) {
+            try {
+                customerService.addCustomer(new BusinessCustomer(1L, "Karavasilis Thomas", "xtkaravas@ote.gr", "Kifisias 99", Nationality.GREEK));
+                customerService.addCustomer(new IndividualCustomer(2L, "Vazakopoulos Michalis", "mvazakopoulos@ote.gr", "Kifisias 91", Nationality.ICELANDIC));
+                customerService.addCustomer(new IndividualCustomer(3L, "Vasiladioti Dora", "dvasiladiot@ote.gr", "Kifisias 87", Nationality.MADAGASCAN));
+                customerService.addCustomer(new BusinessCustomer(4L, "Zachos Dimitris", "dzachos@ote.gr", "Kifisias 01", Nationality.UZBEK));
+                customerService.addCustomer(new IndividualCustomer(5L, "Paschalis Dimitris", "dpaschalis@ote.gr", "Kifisias 36", Nationality.BULGARIAN));
+                customerService.addCustomer(new BusinessCustomer(6L, "Plati Giota", "gplati@ote.gr", "Kifisias 56", Nationality.HUNGARIAN));
+                customerService.addCustomer(new IndividualCustomer(7L, "Farantos Spiros", "sfarantos@ote.gr", "Kifisias 03", Nationality.TOGOLESE));
+                customerService.addCustomer(new IndividualCustomer(8L, "Vetis Ilias", "vetis@travelcompany.com", "Kassandrou 153", Nationality.TOGOLESE));
+
+            } catch (RuntimeException e ){
+                System.out.println("Could not register customer: " + e.getMessage());
+            }
+        }
+
+
+
+    //creates all tickets with exception
     public void initializeTickets(TicketService ticketService, CustomerService customerService, ItineraryService itineraryService) {
+        try {
         ticketService.purchaseTicket(new Ticket(1L, customerService.getCustomerById(1L), itineraryService.getItineraryById(1L), PaymentMethod.CASH));
         ticketService.purchaseTicket(new Ticket(2L, customerService.getCustomerById(3L), itineraryService.getItineraryById(2L), PaymentMethod.CREDIT_CARD));
         ticketService.purchaseTicket(new Ticket(3L, customerService.getCustomerById(1L), itineraryService.getItineraryById(3L), PaymentMethod.CASH));
@@ -51,11 +65,15 @@ public class HandlerMain {
         ticketService.purchaseTicket(new Ticket(8L, customerService.getCustomerById(1L), itineraryService.getItineraryById(8L), PaymentMethod.CREDIT_CARD));
         ticketService.purchaseTicket(new Ticket(9L, customerService.getCustomerById(3L), itineraryService.getItineraryById(9L), PaymentMethod.CREDIT_CARD));
         ticketService.purchaseTicket(new Ticket(10L, customerService.getCustomerById(5L), itineraryService.getItineraryById(10L), PaymentMethod.CASH));
-        ticketService.purchaseTicket(new Ticket(11L, customerService.getCustomerById(4L), itineraryService.getItineraryById(5L), PaymentMethod.CREDIT_CARD));
+        ticketService.purchaseTicket(new Ticket(11L, customerService.getCustomerById(3L), itineraryService.getItineraryById(5L), PaymentMethod.CREDIT_CARD));
         ticketService.purchaseTicket(new Ticket(12L, customerService.getCustomerById(3L), itineraryService.getItineraryById(11L), PaymentMethod.CREDIT_CARD));
         ticketService.purchaseTicket(new Ticket(13L, customerService.getCustomerById(1L), itineraryService.getItineraryById(12L), PaymentMethod.CASH));
         ticketService.purchaseTicket(new Ticket(14L, customerService.getCustomerById(2L), itineraryService.getItineraryById(13L), PaymentMethod.CREDIT_CARD));
         ticketService.purchaseTicket(new Ticket(15L, customerService.getCustomerById(7L), itineraryService.getItineraryById(14L), PaymentMethod.CREDIT_CARD));
+
+        } catch (RuntimeException e ){
+            System.out.println( e.getMessage());
+        }
     }
 
     //Prints all lists of customers , itineraries and tickets
@@ -149,18 +167,23 @@ public class HandlerMain {
     }
 
     //Prints number of tickets and total cost of all tickets booked
-    public void numberOfTicketsAndCost(List<Customer> customerList, List<Ticket> ticketList, List<Itinerary> itineraryList ){
+    public void numberOfTicketsAndCost(List<Customer> customerList, List<Ticket> ticketList) {
 
-        for (Customer customer : customerList){
-            double totalAmountPayed=0;
-            int totalTicketsBooked=0;
-                for (Ticket ticket : ticketList) {
-                    if (customer.getId() == ticket.getCustomer().getId()) {
-                        totalAmountPayed += ticket.getPaymentAmount();
-                        totalTicketsBooked++;
+        List<Customer> outputTotals = new ArrayList<>(); //customers that have booked tickets
+
+        for (Customer customer : customerList) {
+            double totalAmountPayed = 0;
+            int totalTicketsBooked = 0;
+            for (Ticket ticket : ticketList) {
+                if (customer.getId() == ticket.getCustomer().getId()) {
+                    totalAmountPayed += ticket.getPaymentAmount();
+                    totalTicketsBooked++;
                 }
             }
-            System.out.println( customer.getCustomerName() + " has booked " + totalTicketsBooked + " tickets and has paid "+ totalAmountPayed +" € in total.");
+
+            //  outputTotals.add(customer.getCustomerName(),totalTicketsBooked,totalAmountPayed);
+
+            System.out.println(customer.getCustomerName() + " has booked " + totalTicketsBooked + " tickets and has paid " + totalAmountPayed + " € in total.");
         }
 
     }

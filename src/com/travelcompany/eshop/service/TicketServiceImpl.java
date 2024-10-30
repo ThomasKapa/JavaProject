@@ -59,10 +59,24 @@ public class TicketServiceImpl implements TicketService {
         return ticketList;
     }
 
+
+
     @Override
     public void purchaseTicket(Ticket ticket) {
-        ticketList.add(ticket);
-    }
+//
+//        if (ticket.getItinerary() == null || !itineraryList.contains(ticket.getItinerary())) {
+//            throw new RuntimeException("Ticket " + ticket.getId() + " could not be issued because the itinerary does not exist.");
+//        }
+//            if (ticket.getCustomer() == null || !customerList.contains(ticket.getCustomer())) {
+//                throw new RuntimeException("Ticket " + ticket.getId() + " could not be issued because the customer does not exist.");
+//            }
+
+            // If both checks pass, add the ticket to the ticket list
+            ticketList.add(ticket);
+//            System.out.println("Ticket " + ticket.getId() + " purchased successfully for " + ticket.getCustomer().getCustomerName());
+
+        }
+
 
     @Override
     public Ticket getTicketById(long id) {
@@ -115,6 +129,8 @@ public class TicketServiceImpl implements TicketService {
         System.out.println(ticketService.getTicketById(ticketId));
 
     }
+
+
 
 }
 

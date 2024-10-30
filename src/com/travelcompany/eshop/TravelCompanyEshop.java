@@ -6,7 +6,6 @@ import com.travelcompany.eshop.enumeration.*;
 
 import java.util.List;
 
-
 public class TravelCompanyEshop {
 
     public static void main(String[] args) {
@@ -16,21 +15,22 @@ public class TravelCompanyEshop {
         TicketServiceImpl ticketService = new TicketServiceImpl();
         HandlerMain handlerMain = new HandlerMain();
 
-        //customers added
+        //customers added &exception handling
         handlerMain.initializeCustomers(customerService);
-        //Creating list of all customers
+        //Creating list of all customers &exception handling
         List<Customer> customerList = customerService.getAllCustomers();
 
-        //itineraries added
+        //itineraries added  &exception handling
         handlerMain.initializeItineraries(itineraryService);
-        //Creating list of all itineraries
+        //Creating list of all itineraries &exception handling
         List<Itinerary> itineraryList = itineraryService.getAllItineraries();
 
-        //Tickets purchases
-        handlerMain.initializeTickets(ticketService, customerService, itineraryService);
-        //Creating list of all itineraries
-        List<Ticket> ticketList = ticketService.getAllTickets();
+        //Tickets purchases &exception handling
 
+        handlerMain.initializeTickets(ticketService, customerService, itineraryService);
+        //Creating list of all itineraries &exception handling
+        List<Ticket> ticketList = ticketService.getAllTickets();
+//---------------------------------------------------------------------------------------------------------------
         System.out.println();
         //Prints all lists of customers , itineraries and tickets
         handlerMain.printAll(customerList, itineraryList, ticketList);
@@ -68,7 +68,7 @@ public class TravelCompanyEshop {
         System.out.println();
 
         //total number of tickets and total cost per customer
-        handlerMain.numberOfTicketsAndCost(customerList,ticketList,itineraryList);
+        handlerMain.numberOfTicketsAndCost(customerList, ticketList);
 
         //List of the customers with the most tickets and with the largest cost of purchases
 

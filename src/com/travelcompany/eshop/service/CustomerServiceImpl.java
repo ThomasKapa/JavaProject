@@ -15,8 +15,12 @@ public class CustomerServiceImpl implements CustomerService {
         return customerList;
     }
 
+    //when creating a customer and the email of the customer is <whatever>@travelcompany.com throw exception
     @Override
     public void addCustomer(Customer customer) {
+        if ( customer.getEmail()== null || customer.getEmail().contains("@travelcompany.com")){
+            throw new RuntimeException("Email is incorrect for customer: "+ customer.getCustomerName());
+        }
         customerList.add(customer);
     }
 
