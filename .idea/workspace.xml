@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f2612ea4-f11a-486e-a8f0-e552dad10087" name="Changes" comment="Aiport Codes enum list shortened.&#10;CustomerServiceImpl addcustomer exception handling added">
+    <list default="true" id="f2612ea4-f11a-486e-a8f0-e552dad10087" name="Changes" comment="itinerary and airport code exception handling. &#10;printing customer with zero tickets separately">
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/travelcompany/eshop/TravelCompanyEshop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/travelcompany/eshop/TravelCompanyEshop.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/travelcompany/eshop/service/HandlerMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/travelcompany/eshop/service/HandlerMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/travelcompany/eshop/service/ItineraryServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/travelcompany/eshop/service/ItineraryServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/travelcompany/eshop/service/TicketService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/travelcompany/eshop/service/TicketService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/travelcompany/eshop/service/TicketServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/travelcompany/eshop/service/TicketServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -208,7 +204,14 @@
       <option name="project" value="LOCAL" />
       <updated>1730301682918</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="itinerary and airport code exception handling. &#10;printing customer with zero tickets separately">
+      <created>1730330804980</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1730330804980</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -238,7 +241,8 @@
     <MESSAGE value="starting building HandlerMain to clean up the main class" />
     <MESSAGE value="HandlerMain almost finished. added some print methods to ItineraryService,Ticketservice classes.Changed the way things are printing and shown in terminal. :-)" />
     <MESSAGE value="Aiport Codes enum list shortened.&#10;CustomerServiceImpl addcustomer exception handling added" />
-    <option name="LAST_COMMIT_MESSAGE" value="Aiport Codes enum list shortened.&#10;CustomerServiceImpl addcustomer exception handling added" />
+    <MESSAGE value="itinerary and airport code exception handling. &#10;printing customer with zero tickets separately" />
+    <option name="LAST_COMMIT_MESSAGE" value="itinerary and airport code exception handling. &#10;printing customer with zero tickets separately" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
