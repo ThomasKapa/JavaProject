@@ -12,7 +12,7 @@ This project is a basic version of a ticket purchasing and reporting application
 
 ### Clone the Repository
 ```bash
-git clone <repository-url>
+git clone <https://github.com/ThomasKapa/JavaProject.git>
 ```
 
 ### Open in IntelliJ IDEA

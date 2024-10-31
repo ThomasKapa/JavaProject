@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f2612ea4-f11a-486e-a8f0-e552dad10087" name="Changes" comment="itinerary and airport code exception handling. &#10;printing customer with zero tickets separately">
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+    <list default="true" id="f2612ea4-f11a-486e-a8f0-e552dad10087" name="Changes" comment="readme file added">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.txt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -211,7 +212,14 @@
       <option name="project" value="LOCAL" />
       <updated>1730330804980</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="readme file added">
+      <created>1730379091571</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1730379091571</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -242,7 +250,8 @@
     <MESSAGE value="HandlerMain almost finished. added some print methods to ItineraryService,Ticketservice classes.Changed the way things are printing and shown in terminal. :-)" />
     <MESSAGE value="Aiport Codes enum list shortened.&#10;CustomerServiceImpl addcustomer exception handling added" />
     <MESSAGE value="itinerary and airport code exception handling. &#10;printing customer with zero tickets separately" />
-    <option name="LAST_COMMIT_MESSAGE" value="itinerary and airport code exception handling. &#10;printing customer with zero tickets separately" />
+    <MESSAGE value="readme file added" />
+    <option name="LAST_COMMIT_MESSAGE" value="readme file added" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
