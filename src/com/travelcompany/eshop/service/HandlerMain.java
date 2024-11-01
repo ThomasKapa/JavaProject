@@ -61,7 +61,7 @@ public class HandlerMain {
     //creates all tickets with exception
     public void initializeTickets(TicketService ticketService, CustomerService customerService, ItineraryService itineraryService) {
         try {
-//            ticketService.purchaseTicket(new Ticket(1L,customerService.getCustomerById(1L),itineraryService.getItineraryById(20L),PaymentMethod.CASH),itineraryService.getAllItineraries(),customerService.getAllCustomers());
+
             ticketService.purchaseTicket(new Ticket(2L,customerService.getCustomerById(2L),itineraryService.getItineraryById(7L),PaymentMethod.CREDIT_CARD),itineraryService.getAllItineraries(),customerService.getAllCustomers());
             ticketService.purchaseTicket(new Ticket(3L,customerService.getCustomerById(3L),itineraryService.getItineraryById(6L),PaymentMethod.CREDIT_CARD),itineraryService.getAllItineraries(),customerService.getAllCustomers());
             ticketService.purchaseTicket(new Ticket(4L,customerService.getCustomerById(4L),itineraryService.getItineraryById(5L),PaymentMethod.CASH),itineraryService.getAllItineraries(),customerService.getAllCustomers());
@@ -81,6 +81,7 @@ public class HandlerMain {
             ticketService.purchaseTicket(new Ticket(18L,customerService.getCustomerById(4L),itineraryService.getItineraryById(13L),PaymentMethod.CASH),itineraryService.getAllItineraries(),customerService.getAllCustomers());
             ticketService.purchaseTicket(new Ticket(19L,customerService.getCustomerById(5L),itineraryService.getItineraryById(14L),PaymentMethod.CASH),itineraryService.getAllItineraries(),customerService.getAllCustomers());
             ticketService.purchaseTicket(new Ticket(20L,customerService.getCustomerById(6L),itineraryService.getItineraryById(14L),PaymentMethod.CREDIT_CARD),itineraryService.getAllItineraries(),customerService.getAllCustomers());
+            ticketService.purchaseTicket(new Ticket(1L,customerService.getCustomerById(1L),itineraryService.getItineraryById(20L),PaymentMethod.CASH),itineraryService.getAllItineraries(),customerService.getAllCustomers());
 
         } catch (NullPointerException e ){
             System.out.println( "Ticket was not purchased. " + e.getMessage());
